@@ -16,24 +16,21 @@ function createCard(name, link) {
 
     // Обработчик клика по корзине удаления
     const buttonDelete = cardElement.querySelector('.card__delete-button');
-    buttonDelete.addEventListener('click', handDeleteCard);
+    buttonDelete.addEventListener('click', function(event) {
+        const card = event.target.closest('.places__item');
+        card.remove();
+    });
 
     return cardElement;
 }
 
-// @todo: Функция удаления карточки
-function handDeleteCard(event) {
-    const card = event.target.closest('.places__item');
-    card.remove();
-}
-
 // @todo: Вывести карточки на страницу
-function renderCard(cardElement) {
+function addCard(cardElement) {
     galleryContainer.append(cardElement);
 }
 
 
 initialCards.forEach((cardData) => {
     const cardElement = createCard(cardData.name, cardData.link);
-    renderCard(cardElement);
+    addCard(cardElement);
 });
