@@ -1,6 +1,6 @@
 import initialCards from "./scripts/cards";
 import "./pages/index.css";
-import { createCard, cardLike } from "./components/card.js";
+import { createCard, likeCard } from "./components/card.js";
 import {
   openPopup,
   closePopup,

@@ -1,5 +1,5 @@
 // Функция для обработки лайка
-export function cardLike(likeButton) {
+export function likeCard(likeButton) {
   if (!likeButton) {
     return;
   }
@@ -24,7 +24,7 @@ export function createCard(name, link, onRemove, openImagePopup) {
   // Обработчик клика по кнопке лайка
   const likeButton = cardElement.querySelector(".card__like-button");
   likeButton.addEventListener("click", function () {
-    cardLike(likeButton);
+    likeCard(likeButton);
   });
 
   // Обработчик клика по изображению карточки
