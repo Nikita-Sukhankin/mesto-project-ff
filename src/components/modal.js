@@ -34,3 +34,16 @@ export function setupPopupCloseOnOverlayClick(popups) {
     });
   });
 }
+
+// Функция для настройки закрытия попапов по клику на крестик
+export function setupPopupCloseOnButtonClick() {
+  const closeButtons = document.querySelectorAll('.popup__close');
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const popup = button.closest('.popup');
+      if (popup) {
+        closePopup(popup);
+      }
+    });
+  });
+}
