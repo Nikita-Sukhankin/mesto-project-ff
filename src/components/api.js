@@ -37,7 +37,7 @@ export const updateUserData = (userData) => {
 
 // Функция для обновления аватара пользователя
 export const updateAvatar = (avatarUrl) => {
-  const validUrlPattern = /^(https?:\/\/)([a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+)(\/[^\s]*)?$/;
+  const validUrlPattern = /^(https?:\/\/)([a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+)(\/[^\s]*)?$/; 
   if (!validUrlPattern.test(avatarUrl)) {
       return Promise.reject("Неверный формат URL аватара.");
   }

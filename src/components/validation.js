@@ -5,11 +5,10 @@ export function validateField(input, errorMessage, config) {
     if (!input.validity.valid) {
         errorElement.textContent = input.validity.patternMismatch ? errorMessage : input.validationMessage;
         showError(input, errorElement, config);
-        return false;
+        return ;
     }
 
     clearError(input, errorElement, config);
-    return true;
 }
 
 // Функция для показа ошибки
@@ -20,6 +19,7 @@ function showError(input, errorElement, config) {
 
 // Функция для очистки ошибки
 function clearError(input, errorElement, config) {
+    errorElement.textContent = input.validity.patternMismatch ? errorMessage : input.validationMessage;
     errorElement.textContent = ''; 
     input.classList.remove(config.inputErrorClass);
     errorElement.classList.remove(config.errorClass); 
