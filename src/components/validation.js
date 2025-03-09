@@ -3,16 +3,16 @@ export function validateField(input, errorMessage, config) {
     const value = input.value;
 
     if (!input.validity.valid) {
-        errorElement.textContent = input.validity.patternMismatch ? errorMessage : input.validationMessage;
-        showError(input, errorElement, config);
-        return ;
+        showError(input, errorElement, config, errorMessage); 
+        return false;
     }
 
     clearError(input, errorElement, config);
+    return true;
 }
 
 // Функция для показа ошибки
-function showError(input, errorElement, config) {
+function showError(input, errorElement, config, errorMessage) {
     errorElement.textContent = input.validity.patternMismatch ? errorMessage : input.validationMessage;
     errorElement.classList.add(config.errorClass);
     input.classList.add(config.inputErrorClass);
