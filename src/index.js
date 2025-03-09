@@ -74,7 +74,7 @@ function toggleButtonState(button, isLoading) {
 function renderUserData(userData) {
     profileTitle.textContent = userData.name;
     profileDescription.textContent = userData.about;
-    profileImageElement.src = userData.avatar; 
+    profileImageElement.style.backgroundImage = `url(${userData.avatar})`; 
     currentUser = userData;
 }
 // Функция рендеринга карточек
