@@ -13,13 +13,13 @@ export function validateField(input, errorMessage, config) {
 
 // Функция для показа ошибки
 function showError(input, errorElement, config) {
+    errorElement.textContent = input.validity.patternMismatch ? errorMessage : input.validationMessage;
     errorElement.classList.add(config.errorClass);
     input.classList.add(config.inputErrorClass);
 }
 
 // Функция для очистки ошибки
 function clearError(input, errorElement, config) {
-    errorElement.textContent = input.validity.patternMismatch ? errorMessage : input.validationMessage;
     errorElement.textContent = ''; 
     input.classList.remove(config.inputErrorClass);
     errorElement.classList.remove(config.errorClass); 
